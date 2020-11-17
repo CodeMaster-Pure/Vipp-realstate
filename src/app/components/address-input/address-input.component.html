@@ -1,0 +1,75 @@
+<div class="single-email-row row">
+  <div class="col-4">
+    <p><b>Address:</b></p>
+    <div class="addressDiv" *ngIf="!isDisplay">
+      <input class="form-control addressInput" autocorrect="off" (onAddressChange)="handleAddressChange($event)"
+             id="inputAddressMD" autocapitalize="off" spellcheck="off" (load)="loadGooglePlace()" type="text" [(ngModel)]="address"
+             *ngIf="GooglePlace==true" placeholder="address" #placesRef>
+    </div>
+
+    <div class="detailsContainer" *ngIf="isDisplay">
+      <div class="font-weight-bold text-center addressTxt">
+        <div>{{fullAddressText}}</div>
+        <div class="badge badge-pill green" *ngIf="successBadge"><i class="fas fa-check white-text"
+                                                                    aria-hidden="true"></i></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4" style="display: flex">
+    <div>
+      <p><b>Send to:</b></p>
+      <div style="display: block">
+        <input class="input input1" placeholder="send to" name="input" [(ngModel)]="sendto">
+      </div>
+    </div>
+
+    <div style="margin-left: 15px">
+      <p><b>&nbsp;</b></p>
+      <div style="display: block">
+        <input class="input input1" placeholder="cc (optional)" name="input" [(ngModel)]="cc">
+      </div>
+    </div>
+  </div>
+
+  <div class="col-4" style="display: flex">
+    <div>
+      <p><b>Name:</b></p>
+      <div style="display: block">
+        <input class="input input1" placeholder="name" name="input" [(ngModel)]="name">
+      </div>
+    </div>
+
+    <div style="margin-left: 15px">
+      <p><b>Phone:</b></p>
+      <div style="display: block">
+        <input class="input input1" placeholder="phone" name="input" [(ngModel)]="phone">
+      </div>
+    </div>
+
+    <div class="action-area" *ngIf="(!isFinished || !gethippodata_finished || !getflooddata_finished || !getstillwaterdata_finished || !getplymouthdata_finished || !getuniversaldata_finished) && addressInputed" style="margin-left: 30px">
+      <mdb-progress value="{{progress}}" min="0" max="100" type="info" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100"></mdb-progress>
+    </div>
+
+    <div  class="action-area" *ngIf="isFinished && gethippodata_finished && getflooddata_finished && getstillwaterdata_finished && getplymouthdata_finished && getuniversaldata_finished">
+      <div class="gmap-price" style="margin-left: 30px">
+        <!--app-demo-gmap></app-demo-gmap-->
+	<agm-map [zoom]="10" [latitude]="lat" [longitude]="lng">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+        </agm-map>
+      </div>
+      <div style="min-width: 58px; font-size: 14px;">{{total_prices}} Prices</div>
+      <div class="pdf-preview" *ngIf="pdf_link != ''">
+        <a href="{{pdf_link}}" download="download.pdf" target="_blank">
+          <img src="../../../assets/images/batch/pdf.png">
+        </a>
+      </div>
+      <div class="pdf-preview" *ngIf="pdf_link == ''">
+        <a class="disabled">
+          <img src="../../../assets/images/batch/pdf.png">
+        </a>
+      </div>
+      <div class="button send-button" (click)="sendEmail(sendto, cc, name, phone, false)">Send</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+.badge-pill {
+  padding: 4px;
+  border-radius: 50%;
+}
+
+.badge {
+  padding: 4px;
+}
+
+.single-email-row {
+  div {
+    .input {
+      background: #f2f2f2;
+      padding: 5px 15px;
+
+      border: none;
+      border-radius: 0 !important;
+      height: auto;
+      margin-bottom: 3rem;
+      margin-right: 0;
+      width: 100%;
+    }
+
+    .input.input1 {
+      width: 174px;
+    }
+
+    .button {
+      background: #f2f2f2;
+      padding: 5px 31px;
+      margin-right: 3rem;
+      width: 218px;
+      height: 65px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      cursor: pointer;
+    }
+
+    .button.send-button {
+      margin: 0;
+      width: 60px;
+      padding: 0;
+      display: flex !important;
+      height: 34px;
+    }
+  }
+
+  .action-area {
+    display: flex;
+    align-items: center;
+
+    div {
+      margin-right: 20px;
+    }
+
+    .pdf-preview {
+      .disabled img{
+	opacity: 0.5;
+      }
+    }
+  }
+}

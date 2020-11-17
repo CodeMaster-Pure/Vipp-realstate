@@ -1,0 +1,94 @@
+.batch-page {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  .success-message {
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 5px;
+  }
+
+  .btn-wrapper .button {
+    background: #f2f2f2;
+    padding: 5px 31px;
+    margin-right: 3rem;
+    width: 218px;
+    height: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+  }
+  .input-wrapper input{
+    background: #f2f2f2;
+    padding: 5px 31px;
+    margin-right: 3rem;
+    width: 218px;
+    height: 65px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .button {
+    img {
+      padding-right: 15px;
+    }
+  }
+
+  .welcome-img {
+    margin-top: 3rem;
+  }
+
+  .input-wrapper {
+    border: 1px solid;
+    border-width: 1px 0;
+    padding: 50px 0;
+    margin: 50px 0;
+
+    div {
+      display: inline-block;
+
+      .input {
+        background: #f2f2f2;
+        padding: 5px 31px;
+
+        border: none;
+        border-radius: 0 !important;
+        width: 314px;
+        margin-bottom: 5px;
+      }
+    }
+  }
+
+  .single-email-row {
+    div {
+      display: inline-block;
+
+      .input {
+        background: #f2f2f2;
+        padding: 5px 15px;
+
+        border: none;
+        border-radius: 0 !important;
+        height: auto;
+        margin-bottom: 3rem;
+        margin-right: 0;
+        width: 100%;
+      }
+
+      .input.input1 {
+        width: 174px;
+      }
+    }
+
+  }
+
+  .button.done {
+    background: #68D7E5 !important;
+    color: #fff;
+    flex-direction: column;
+  }
+}
+
